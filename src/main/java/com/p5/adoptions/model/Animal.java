@@ -1,6 +1,6 @@
 package com.p5.adoptions.model;
 
-public class Animal extends AbstractAnimal {
+public class Animal extends AbstractAnimal implements AnimalInterface{
 
     private String name;
     private String photo;
@@ -14,6 +14,7 @@ public class Animal extends AbstractAnimal {
         this.photo = photo;
     }
 
+    @Override
     public String makeSound()
     {
         return "nothing";
@@ -22,6 +23,7 @@ public class Animal extends AbstractAnimal {
     /**
      * Only visible in this class and in those that extends
      */
+
     protected String secondSound()
     {
     return "Nothing2";
@@ -55,4 +57,13 @@ public class Animal extends AbstractAnimal {
     }
 
 
+    @Override
+    public String howManyLegs() {
+        return null;
+    }
+
+    @Override
+    public String defauldMethod() {
+        return null;
+    }
 }

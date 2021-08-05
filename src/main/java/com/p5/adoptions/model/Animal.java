@@ -1,26 +1,58 @@
 package com.p5.adoptions.model;
 
-public class Animal {
+public class Animal extends AbstractAnimal {
 
     private String name;
     private String photo;
+
+    public Animal()
+    {
+    }
+
+    public Animal(String name, String photo) {
+        this.name = name;
+        this.photo = photo;
+    }
+
+    public String makeSound()
+    {
+        return "nothing";
+    }
+
+    /**
+     * Only visible in this class and in those that extends
+     */
+    protected String secondSound()
+    {
+    return "Nothing2";
+    }
+
+    @Override
+    public String whatDoesItEat() {
+        return "Unknown";
+    }
+
+
+
+    // Getters and Setters
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Animal setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(String photo) {
+    public Animal setPhoto(String photo) {
         this.photo = photo;
+        return this;
     }
-
 
 
 }
